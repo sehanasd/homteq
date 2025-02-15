@@ -33,7 +33,9 @@ echo "<td style='border: 0px'>";
 
 //display the small image whose name is contained in the array
 
+echo "<a href=prodbuy.php?u_prod_id=".$arrayp['prodId'].">";
 echo "<img src=images/".$arrayp['prodPicNameSmall']." height=200 width=200>";
+echo "</a>";
 echo "</td>";
 echo "<td style='border: 0px'>";
 

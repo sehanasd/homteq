@@ -17,7 +17,7 @@ echo "<h4>".$pagename."</h4>";
 //store the value in a local variable called $prodid
 $prodid=$_GET['u_prod_id'];
 //display the value of the product id, for debugging purposes
-echo "<p>Selected product Id: ".$prodid;
+// echo "<p>Selected product Id: ".$prodid;
 
 //create a $SQL variable and populate it with a SQL statement that retrieves product details
 
@@ -44,25 +44,36 @@ echo "</td>";
 echo "<td style='border: 0px'>";
 echo "<p><h5>".$arrayp['prodName']."</h5>"; //display product name as contained in the array
 echo "<p>".$arrayp['prodDescripLong'];
-echo "<p>< &pound;".$arrayp['prodPrice'];
+echo "</td>";
+echo "</tr>";
+
+echo "<tr>";
+echo "<td style='border: 0px'></td>";
+echo "<td style='border: 0px'>";
+echo "<p> &pound;".$arrayp['prodPrice'];
 echo "<p>Number in stock: ".$arrayp['prodQuantity'];
 echo "</td>";
 echo "</tr>";
 
 }
 
-echo "</table>";
+echo "<tr>";
+echo "<td style='border: 0px'></td>";
+echo "<td style='border: 0px'>";
 echo "<p>Number to be purchased: ";
 //create form made of one text field and one button for user to enter quantity
 //the value entered in the form will be posted to the basket.php to be processed
+
 echo "<form action=basket.php method=post>";
 echo "<input type=text name=p_quantity size=5 maxlength=3>";
 echo "<input type=submit name='submitbtn' value='ADD TO BASKET' id='submitbtn'>";
 //pass the product id to the next page basket.php as a hidden value
 echo "<input type=hidden name=h_prodid value=".$prodid.">";
+echo "</td>";
+echo "</tr>";
 echo "</form>";
 echo "</p>";
-
+echo "</table>";
 include ("footfile.html");
 echo "</body>";
 
